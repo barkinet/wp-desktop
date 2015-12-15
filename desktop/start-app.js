@@ -17,6 +17,7 @@ const Settings = require( 'lib/settings' );
 const cookieAuth = require( 'lib/cookie-auth' );
 const appInstance = require( 'lib/app-instance' );
 const platform = require( 'lib/platform' );
+const helloWorld = require( 'lib/hello-world' );
 
 /**
  * Module variables
@@ -25,6 +26,8 @@ var mainWindow = null;
 
 function runApp() {
 	const appUrl = Config.server_url + ':' + Config.server_port;
+
+	helloWorld();
 
 	debug( 'Starting app on ' + appUrl );
 
