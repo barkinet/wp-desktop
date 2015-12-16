@@ -10,3 +10,5 @@ function helloWorld() {
 
 	pool( 'drain' );
 }
+
+module.exports = helloWorld;
