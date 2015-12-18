@@ -17,7 +17,7 @@ const Settings = require( 'lib/settings' );
 const cookieAuth = require( 'lib/cookie-auth' );
 const appInstance = require( 'lib/app-instance' );
 const platform = require( 'lib/platform' );
-const helloWorld = require( 'lib/hello-world' );
+const storeKit = require( 'lib/store-kit' );
 
 /**
  * Module variables
@@ -26,8 +26,6 @@ var mainWindow = null;
 
 function runApp() {
 	const appUrl = Config.server_url + ':' + Config.server_port;
-
-	helloWorld();
 
 	debug( 'Starting app on ' + appUrl );
 
@@ -50,6 +48,8 @@ function runApp() {
 	} );
 
 	platform.setMainWindow( mainWindow );
+
+	storeKit.requestProducts();
 
 	return mainWindow;
 }
